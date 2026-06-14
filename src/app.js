@@ -9,6 +9,13 @@ app.use(cors({
     credentials: true
 }))
 
+app.get("/", (req, res) => {
+  res.status(200).json({
+    success: true,
+    message: "VideoTube Backend API is running successfully"
+  });
+});
+
 app.use(express.json({limit: "16kb"}))
 app.use(express.urlencoded({extended: true, limit: "16kb"}))
 app.use(express.static("public"))
